@@ -65,11 +65,11 @@ class RestCurl extends RestBase
             throw new RuntimeException("JSON inválido em $jsonFile");
         }
 
-        $contextData = $json[$context] ?: [];
+        $contextData = $json[$context] ?? [];
 
-        $this->URLS = $this->mergeDefaults(self::DEFAULT_URLS, $contextData['urls'] ?: []);
+        $this->URLS = $this->mergeDefaults(self::DEFAULT_URLS, $contextData['urls'] ?? []);
 
-        $this->OPERATIONS = $this->mergeDefaults(self::DEFAULT_OPERATIONS, $contextData['operations'] ?: []);
+        $this->OPERATIONS = $this->mergeDefaults(self::DEFAULT_OPERATIONS, $contextData['operations'] ?? []);
 
     }
 
