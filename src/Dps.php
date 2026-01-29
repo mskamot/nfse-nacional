@@ -600,7 +600,7 @@ class Dps implements DpsInterface
                 $this->std->infdps->serv->comext->movtempbens
             );
 
-            if(isset($this->std->infdps->serv->comext->ndi)){
+            if (isset($this->std->infdps->serv->comext->ndi)) {
                 $this->dom->addChild(
                     $comext_inner,
                     'nDI',
@@ -608,7 +608,7 @@ class Dps implements DpsInterface
                 );
             }
 
-            if(isset($this->std->infdps->serv->comext->nre)){
+            if (isset($this->std->infdps->serv->comext->nre)) {
                 $this->dom->addChild(
                     $comext_inner,
                     'nRE',
@@ -625,85 +625,84 @@ class Dps implements DpsInterface
 
         }
 
-
         //TODO Fazer grupo lsadppu
         //TODO Fazer grupo obra
-if (isset($this->std->infdps->serv->atvevento)) {
-    $atvEvento_inner = $this->dom->createElement('atvEvento');
-    $serv_inner->appendChild($atvEvento_inner);
+        if (isset($this->std->infdps->serv->atvevento)) {
+            $atvEvento_inner = $this->dom->createElement('atvEvento');
+            $serv_inner->appendChild($atvEvento_inner);
 
-    // Campo: xNome
-    if (isset($this->std->infdps->serv->atvevento->xnome)) {
-        $this->dom->addChild(
-            $atvEvento_inner,
-            'xNome',
-            $this->std->infdps->serv->atvevento->xnome,
-            true
-        );
-    }
+            // Campo: xNome
+            if (isset($this->std->infdps->serv->atvevento->xnome)) {
+                $this->dom->addChild(
+                    $atvEvento_inner,
+                    'xNome',
+                    $this->std->infdps->serv->atvevento->xnome,
+                    true
+                );
+            }
 
-    // Campo: dtIni
-    if (isset($this->std->infdps->serv->atvevento->dtini)) {
-        $this->dom->addChild(
-            $atvEvento_inner,
-            'dtIni',
-            $this->std->infdps->serv->atvevento->dtini,
-            true
-        );
-    }
+            // Campo: dtIni
+            if (isset($this->std->infdps->serv->atvevento->dtini)) {
+                $this->dom->addChild(
+                    $atvEvento_inner,
+                    'dtIni',
+                    $this->std->infdps->serv->atvevento->dtini,
+                    true
+                );
+            }
 
-    // Campo: dtFim
-    if (isset($this->std->infdps->serv->atvevento->dtfim)) {
-        $this->dom->addChild(
-            $atvEvento_inner,
-            'dtFim',
-            $this->std->infdps->serv->atvevento->dtfim,
-            true
-        );
-    }
+            // Campo: dtFim
+            if (isset($this->std->infdps->serv->atvevento->dtfim)) {
+                $this->dom->addChild(
+                    $atvEvento_inner,
+                    'dtFim',
+                    $this->std->infdps->serv->atvevento->dtfim,
+                    true
+                );
+            }
 
-    // Endereço do evento
-    if (isset($this->std->infdps->serv->atvevento->end)) {
-        $end_evento_inner = $this->dom->createElement('end');
-        $atvEvento_inner->appendChild($end_evento_inner);
+            // Endereço do evento
+            if (isset($this->std->infdps->serv->atvevento->end)) {
+                $end_evento_inner = $this->dom->createElement('end');
+                $atvEvento_inner->appendChild($end_evento_inner);
 
-        if (isset($this->std->infdps->serv->atvevento->end->cep)) {
-            $this->dom->addChild(
-                $end_evento_inner,
-                'CEP',
-                $this->std->infdps->serv->atvevento->end->cep,
-                true
-            );
+                if (isset($this->std->infdps->serv->atvevento->end->cep)) {
+                    $this->dom->addChild(
+                        $end_evento_inner,
+                        'CEP',
+                        $this->std->infdps->serv->atvevento->end->cep,
+                        true
+                    );
+                }
+
+                if (isset($this->std->infdps->serv->atvevento->end->xlgr)) {
+                    $this->dom->addChild(
+                        $end_evento_inner,
+                        'xLgr',
+                        $this->std->infdps->serv->atvevento->end->xlgr,
+                        true
+                    );
+                }
+
+                if (isset($this->std->infdps->serv->atvevento->end->nro)) {
+                    $this->dom->addChild(
+                        $end_evento_inner,
+                        'nro',
+                        $this->std->infdps->serv->atvevento->end->nro,
+                        true
+                    );
+                }
+
+                if (isset($this->std->infdps->serv->atvevento->end->xbairro)) {
+                    $this->dom->addChild(
+                        $end_evento_inner,
+                        'xBairro',
+                        $this->std->infdps->serv->atvevento->end->xbairro,
+                        true
+                    );
+                }
+            }
         }
-
-        if (isset($this->std->infdps->serv->atvevento->end->xlgr)) {
-            $this->dom->addChild(
-                $end_evento_inner,
-                'xLgr',
-                $this->std->infdps->serv->atvevento->end->xlgr,
-                true
-            );
-        }
-
-        if (isset($this->std->infdps->serv->atvevento->end->nro)) {
-            $this->dom->addChild(
-                $end_evento_inner,
-                'nro',
-                $this->std->infdps->serv->atvevento->end->nro,
-                true
-            );
-        }
-
-        if (isset($this->std->infdps->serv->atvevento->end->xbairro)) {
-            $this->dom->addChild(
-                $end_evento_inner,
-                'xBairro',
-                $this->std->infdps->serv->atvevento->end->xbairro,
-                true
-            );
-        }
-    }
-}
         //TODO Fazer grupo explRod
 
 
@@ -793,7 +792,7 @@ if (isset($this->std->infdps->serv->atvevento)) {
         //TODO Fazer grupo vDescCondIncond
 		// Grupo vDescCondIncond (dentro de <valores>)
 		$vDescIncond = $this->std->infdps->valores->vdesccondincond->vdescincond ?? null;
-		$vDescCond   = $this->std->infdps->valores->vdesccondincond->vdesccond   ?? null; 
+		$vDescCond   = $this->std->infdps->valores->vdesccondincond->vdesccond   ?? null;
 
 		// regra: considera vazio se null, string vazia, ou "0.00" (ajuste se quiser manter 0.00)
 		$temDescIncond = ($vDescIncond !== null && $vDescIncond !== '' && $vDescIncond !== '0.00');
@@ -806,8 +805,8 @@ if (isset($this->std->infdps->serv->atvevento)) {
 			$this->dom->addChild($descontos_inner, 'vDescIncond', $vDescIncond, false);
 			$this->dom->addChild($descontos_inner, 'vDescCond',   $vDescCond,   false);
 		}
-		
-		
+
+
         //TODO Fazer grupo vDedRed
 
         $trib_inner = $this->dom->createElement('trib');
