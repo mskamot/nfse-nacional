@@ -25,10 +25,9 @@ Sem esse trabalho prévio, este repositório **muito provavelmente não existiri
 Por fim, meu agradecimento também a todas as pessoas que contribuem com este repositório seja enviando PRs, sugerindo melhorias, corrigindo bugs ou apontando problemas.  
 A lista de contribuidores pode ser vista em: https://github.com/Rainzart/nfse-nacional/graphs/contributors
 
-## !!! AVISO !!!
+## !!! AVISOS !!!
 
 ### Configuração da Prefeitura
-
 Na configuração do sistema, a variável `prefeitura` pode receber atualmente dois tipos de valores:
 
 - Um identificador textual, por exemplo: `americana-sp`
@@ -37,6 +36,17 @@ Na configuração do sistema, a variável `prefeitura` pode receber atualmente d
 ⚠️ **Importante:** no momento, ambos os formatos são aceitos por compatibilidade.  
 Porém, **futuramente o padrão adotado será exclusivamente o código IBGE**.  
 Recomenda-se desde já utilizar o código IBGE para evitar ajustes em versões futuras.
+
+### Método consultarNfseChave() e encoding
+O arquivo XML após o gz_decode está vindo em ISO-8859-1. O método vai passar pelo mb_convert_encoding mantendo ISO, caso você tenha problemas utilize o segundo parâmetro como false como exemplo abaixo:  
+
+```
+//Retorna ISO, padrão.
+$tools->consultarNfseChave('CHAVE_NFSE');
+
+//Retorna XML cru, sem passar por mb_convert_enconding
+$tools->consultarNfseChave('CHAVE_NFSE', false);
+```
 
 ## Install
 
