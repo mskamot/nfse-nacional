@@ -6,9 +6,9 @@ Este pacote foi desenvolvido para atender algumas das minhas necessidades, imple
 
 **Em desenvolvimento. Use por sua conta e risco.**
 
-## !!! AVISOS !!!
+## ⚠️⚠️⚠️ AVISOS ⚠️⚠️⚠️
 
-### Configuração da Prefeitura
+###  Configuração da Prefeitura
 
 Na configuração do sistema, a variável `prefeitura` pode receber atualmente dois tipos de valores:
 
